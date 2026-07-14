@@ -1,0 +1,346 @@
+/* Compiled CSS for news.scss (generated manually) */
+html, body { height: 100%; }
+*{box-sizing: border-box;}
+body.news-page{background:#080808;color:#ddd;font-family:'Helvetica Neue', Arial, sans-serif}
+
+/* Header */
+
+/* Banner */
+.page-banner{height:25vh;min-height:160px;color:#ffffff;display:flex;align-items:center;justify-content:center;text-align:center}
+.page-banner h1{font-family:Impact, 'ImpactFallback', sans-serif;font-size:clamp(28px,4vw,56px);margin:0;letter-spacing:2px}
+.page-banner .subhead{margin-top:8px;color:#888888;font-family:'Helvetica Neue', Arial, sans-serif;letter-spacing:6px;text-transform:uppercase}
+
+/* Main feed */
+.featured-article{background:transparent;border-radius:6px;overflow:hidden}
+.featured-media{height:320px;background-size:cover;background-position:center;filter:contrast(.85) saturate(.8) brightness(.45) grayscale(.05)}
+.featured-body{background:linear-gradient(180deg, rgba(8,8,8,0.35), rgba(8,8,8,0.6))}
+.featured-article .meta{font-family:'Helvetica Neue', Arial, sans-serif;color:#ff007f;font-weight:700;margin-bottom:6px}
+.featured-article h2{font-family:Impact, 'ImpactFallback', sans-serif;color:#ffffff;margin-top:0;margin-bottom:8px}
+.featured-article .excerpt{color:#cccccc}
+.read-link{display:inline-block;margin-top:12px;color:#39ff14;text-decoration:none;position:relative}
+.read-link:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:transparent;transition:background .18s ease}
+.read-link:hover:after{background:#39ff14}
+
+/* Side updates */
+.side-updates .tag{color:#888888;font-size:13px;margin-bottom:6px}
+.side-updates h4{font-family:Impact, 'ImpactFallback', sans-serif;color:#ffffff;margin:0 0 6px 0}
+.side-updates .small{color:#999999;font-size:14px}
+
+/* Newsletter banner */
+.newsletter-banner{background:#c7ff00}
+.newsletter-banner h3{font-family:Impact, 'ImpactFallback', sans-serif;color:#006241;margin:0 0 6px 0}
+.newsletter-banner p{color:#006241;margin:0}
+.newsletter-banner .form-control{max-width:320px;background:#fff;border:0}
+.join-btn{background:#006241;color:#fff;font-weight:700;border:0}
+
+/* Footer */
+.site-footer{background:transparent;color:#888888}
+.site-footer .footer-logo img{width:56px}
+.site-footer .social a{color:#888888;transition:color .18s ease}
+.site-footer .social a:hover{color:#ff007f}
+
+@media (max-width:767px){
+  .featured-media{height:200px}
+  .brand-text{display:none}
+  .main-nav .nav{gap:8px}
+}
+
+/* Interactive enhancements */
+.featured-media{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.featured-media:hover{transform:scale(1.03)}
+
+/* Nav hover glow */
+.main-nav .nav-link:hover{color:#cfffbe;text-shadow:0 0 10px rgba(57,255,20,0.08)}
+
+/* Gallery / Image space */
+.image-space h3{font-family:Impact, 'ImpactFallback', sans-serif;color:#fff}
+.gallery{display:grid}
+.gallery-item{width:100%;height:140px;object-fit:cover;border-radius:6px;cursor:pointer;display:block;transition:transform .28s ease, box-shadow .28s ease, filter .28s ease}
+.gallery-item:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,0.6);filter:brightness(.95) saturate(1.05)}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:2000;padding:20px}
+.lightbox[aria-hidden="false"]{display:flex}
+.lb-img{max-width:90%;max-height:90%;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,0.8)}
+.lb-close{position:absolute;top:18px;right:22px;background:transparent;border:0;color:#fff;font-size:32px;cursor:pointer}
+
+/* Read link hover micro animation */
+.read-link{transition:transform .18s ease,color .18s ease}
+.read-link:hover{transform:translateX(6px)}
+
+/* Social icon hover pop */
+.site-footer .social a{transition:transform .18s ease,color .18s ease}
+.site-footer .social a:hover{transform:translateY(-3px);color:#ff007f}
+
+/* Mini articles / More news */
+.more-news .mini-article{background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);border-radius:8px}
+.more-news .meta{color:#888888;font-size:12px;margin-bottom:6px}
+.more-news h5{font-family:Impact, 'ImpactFallback', sans-serif;color:#fff;margin:0 0 8px 0}
+.more-news .small{color:#bfbfbf}
+.more-news .mini-article .read-link{color:#39ff14}
+.more-news .mini-article:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+
+
+/* Subtle page overlay: vignette + faint grid + animated grain */
+body.news-page{position:relative}
+body.news-page::before{
+  content: '';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background-image: radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.45) 70%),
+                    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: cover, 140px 140px, 140px 140px;
+  mix-blend-mode: normal;
+  opacity:0.9;
+}
+/* very subtle animated grain using small translucent noise via radial gradients */
+body.news-page::after{
+  content: '';
+  position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.04;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence baseFrequency="0.9" numOctaves="1" stitchTiles="stitch" seed="2"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+  background-size:200% 200%;
+  animation: grain 8s linear infinite;
+}
+@keyframes grain{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+
+/* Ensure main content stacks above overlays */
+header.site-header, .page-banner, main.container, .image-space, .newsletter-banner, footer.site-footer{position:relative;z-index:1}
+
+/* Footer styles (matching provided CSS) */
+.footer{background-color:rgba(8, 8, 8, 0.98);border-top:2px solid rgba(255, 0, 127, 0.2);padding:2rem 0}
+.footer-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto;padding:0 2rem;flex-wrap:wrap;gap:2rem}
+.footer-box{flex:1;min-width:200px;text-align:center}
+.footer-left{text-align:left}
+.footer-right{text-align:right}
+.copyright{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:0.9rem;color:#666666;margin:0}
+.footer-logo{display:inline-block;width:60px;height:60px}
+.footer-logo img{width:100%;height:100%;object-fit:contain;transition:transform .3s ease, filter .3s ease}
+.footer-logo img:hover{transform:scale(1.15) rotate(5deg);filter:drop-shadow(0 0 15px #ff007f)}
+.social-icons{display:flex;gap:1.5rem;justify-content:flex-end}
+.social-icon{font-size:1.5rem;color:#888888;text-decoration:none;transition:all .3s ease;display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border:1px solid #888888;border-radius:50%}
+.social-icon:hover{color:#ff007f;border-color:#ff007f;transform:scale(1.2);text-shadow:0 0 10px #ff007f;background-color:rgba(255,0,127,0.1)}
+
+@font-face {
+  font-family: "ImpactFallback";
+  src: local("Impact"), local("Arial Black");
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body.news-page {
+  background: #080808;
+  color: #ddd;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
+  background: rgba(8, 8, 8, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.logo-wrap:hover .logo {
+  transform: rotate(5deg);
+}
+
+.brand-text {
+  margin-left: 10px;
+  font-family: Impact, "ImpactFallback", sans-serif;
+  color: #ff007f;
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.18);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.main-nav .nav-link {
+  color: #888888;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.main-nav .nav-link.active {
+  color: #39ff14;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.12);
+  font-weight: 800;
+}
+
+/* Banner */
+.page-banner {
+  height: 25vh;
+  min-height: 160px;
+  color: #ffffff;
+}
+
+.page-banner h1 {
+  font-family: Impact, "ImpactFallback", sans-serif;
+  font-size: clamp(28px, 4vw, 56px);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.page-banner .subhead {
+  margin-top: 8px;
+  color: #888888;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+/* Main feed */
+.featured-article {
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.featured-media {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(0.85) saturate(0.8) brightness(0.45) grayscale(0.05);
+}
+
+.featured-body {
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.35), rgba(8, 8, 8, 0.6));
+}
+
+.featured-article .meta {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #ff007f;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.featured-article h2 {
+  font-family: Impact, "ImpactFallback", sans-serif;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.featured-article .excerpt {
+  color: #cccccc;
+}
+
+.read-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #39ff14;
+  text-decoration: none;
+  position: relative;
+}
+
+.read-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: transparent;
+  transition: background 0.18s ease;
+}
+
+.read-link:hover:after {
+  background: #39ff14;
+}
+
+/* Side updates */
+.side-updates .tag {
+  color: #888888;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.side-updates h4 {
+  font-family: Impact, "ImpactFallback", sans-serif;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.side-updates .small {
+  color: #999999;
+  font-size: 14px;
+}
+
+/* Newsletter banner */
+.newsletter-banner {
+  background: #c7ff00;
+}
+
+.newsletter-banner h3 {
+  font-family: Impact, "ImpactFallback", sans-serif;
+  color: #006241;
+  margin: 0 0 6px 0;
+}
+
+.newsletter-banner p {
+  color: #006241;
+  margin: 0;
+}
+
+.newsletter-banner .form-control {
+  max-width: 320px;
+  background: #fff;
+  border: 0;
+}
+
+.join-btn {
+  background: #006241;
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+}
+
+/* Footer */
+.site-footer {
+  background: transparent;
+  color: #888888;
+}
+
+.site-footer .footer-logo img {
+  width: 56px;
+}
+
+.site-footer .social a {
+  color: #888888;
+  transition: color 0.18s ease;
+}
+
+.site-footer .social a:hover {
+  color: #ff007f;
+}
+
+@media (max-width: 767px) {
+  .featured-media {
+    height: 200px;
+  }
+  .brand-text {
+    display: none;
+  }
+  .main-nav .nav {
+    gap: 8px;
+  }
+}/*# sourceMappingURL=news.css.map */
+ 
+
+/*# sourceMappingURL=news.css.map */
