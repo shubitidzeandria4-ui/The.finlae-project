@@ -1,0 +1,13 @@
+{
+  "name": "github-pages-site",
+  "version": "1.0.0",
+  "description": "A project to ensure all links and image paths are correctly set up for GitHub Pages.",
+  "main": "src/main.js",
+  "scripts": {
+    "check-paths": "node src/main.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
